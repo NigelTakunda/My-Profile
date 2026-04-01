@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About Nigel Takunda Nawu — biography, skills, education and experience." />
+  <title>About | Nigel Takunda Nawu</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Mulish:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- External CSS stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <nav class="navbar" id="navbar" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="nav-logo">Nigel<em>.</em></a>
+
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active" aria-current="page">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <button class="nav-toggle" id="navToggle"
+              aria-label="Toggle navigation menu"
+              aria-expanded="false"
+              aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===================== PAGE HEADER ===================== -->
+  <header class="page-header" aria-labelledby="about-heading">
+    <div class="container">
+      <span class="section-label">Get to know me</span>
+      <h1 id="about-heading">About Me</h1>
+      <p>Student, developer, and problem-solver based in Harare, Zimbabwe.</p>
+    </div>
+  </header>
+
+  <!-- ===================== ABOUT CONTENT ===================== -->
+  <main>
+    <section class="section" aria-label="About content">
+      <div class="container">
+        <div class="about-grid">
+
+          <!-- ---- Sidebar: Profile card + stats ---- -->
+          <aside class="about-sidebar">
+            <div class="profile-card">
+              <!-- Profile photo placeholder -->
+              <div class="profile-card-img" aria-label="Nigel Takunda Nawu profile photo">
+                <!--
+                  TO ADD YOUR PHOTO:
+                  <img src="images/nigel.jpg" alt="Nigel Takunda Nawu">
+                -->
+                👤
+              </div>
+              <div class="profile-card-body">
+                <h3>Nigel Takunda Nawu</h3>
+                <p class="profile-role">Web Developer</p>
+                <ul class="profile-meta" role="list">
+                  <li class="profile-meta-item">
+                    <span class="profile-meta-icon" aria-hidden="true">🎓</span>
+                    BSc ISA — HIT
+                  </li>
+                  <li class="profile-meta-item">
+                    <span class="profile-meta-icon" aria-hidden="true">📍</span>
+                    Harare, Zimbabwe
+                  </li>
+                  <li class="profile-meta-item">
+                    <span class="profile-meta-icon" aria-hidden="true">💼</span>
+                    Open to opportunities
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Quick stats -->
+            <div class="about-stats">
+              <div class="stat-card">
+                <span class="stat-number">2+</span>
+                <span class="stat-label">Years Coding</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-number">8+</span>
+                <span class="stat-label">Projects</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-number">6</span>
+                <span class="stat-label">Technologies</span>
+              </div>
+            </div>
+          </aside>
+
+          <!-- ---- Main content: Bio + Skills + Timeline ---- -->
+          <div class="about-main">
+
+            <!-- Biography -->
+            <section aria-labelledby="bio-heading">
+              <span class="section-label">Biography</span>
+              <h2 id="bio-heading">A student who builds things</h2>
+              <div class="about-bio" style="margin-top:1rem;">
+                <!-- Replace with your real biography -->
+                <p>
+                  Hi, I'm Nigel — a First-year Information Security & Assuarance;  student at
+                  the Harare Institute of Technology. My journey into web development started
+                  when I built my first HTML page and realised I could create something anyone
+                  in the world could see and use.
+                </p>
+                <p>
+                  I enjoy bridging the gap between technical requirements and user experience —
+                  writing clean, semantic code that works beautifully on every screen size.
+                  My coursework has strengthened my foundations in systems thinking, databases,
+                  and software development methodologies.
+                </p>
+                <p>
+                  Outside of academics, I work on personal projects, contribute to peer
+                  study groups, and keep up with developments in web technologies. I'm
+                  always eager to learn something new and take on projects that challenge me.
+                </p>
+              </div>
+            </section>
+
+            <!-- Skills -->
+            <section class="skills-wrap" aria-labelledby="skills-heading">
+              <span class="section-label">Technical Skills</span>
+              <h2 id="skills-heading">Skills & Assuarance; Proficiency</h2>
+
+              <!-- Skills rendered by JavaScript -->
+              <div class="skills-grid" id="skillsGrid" style="margin-top:1.5rem;"></div>
+            </section>
+
+            <!-- Timeline -->
+            <section class="timeline-section" aria-labelledby="timeline-heading">
+              <span class="section-label">My Journey</span>
+              <h2 id="timeline-heading">Education & Assuarance; Experience</h2>
+
+              <ol class="timeline" role="list" style="margin-top:1.5rem;">
+
+                <li class="timeline-item">
+                  <time class="t-date" datetime="2023">2023 – Present</time>
+                  <h3 class="t-title">BSc Information Systems & Assuarance; Analysis</h3>
+                  <p class="t-org">Harare Institute of Technology (HIT), Harare</p>
+                  <p class="t-desc">
+                    Studying Information Security, web technologies, database management & Visual
+                    programming. Currently in Year 1.2.
+                  </p>
+                </li>
+
+                <li class="timeline-item">
+                  <time class="t-date" datetime="2024">2024</time>
+                  <h3 class="t-title">Web Development Projects</h3>
+                  <p class="t-org">Academic & Assuarance; Personal Projects</p>
+                  <p class="t-desc">
+                    Built and deployed several responsive web applications using HTML,
+                    CSS, and JavaScript as part of coursework and self-directed learning.
+                  </p>
+                </li>
+
+                <li class="timeline-item">
+                  <time class="t-date" datetime="2022">2022</time>
+                  <h3 class="t-title">A Level — Statistics, Geography,Software engineering, Computer Science</h3>
+                  <p class="t-org">Secondary School, Zimbabwe</p>
+                  <p class="t-desc">
+                    Completed A Levels with strong passes, with Computer Science sparking
+                    my interest in programming and technology.
+                  </p>
+                </li>
+
+              </ol>
+            </section>
+
+          </div><!-- /about-main -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <p>© <span id="year"></span> Nigel Takunda Nawu. All rights reserved.</p>
+        <nav aria-label="Footer navigation">
+          <ul class="nav-links" role="list">
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== JAVASCRIPT ===================== -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Navbar scroll shadow
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    // Mobile nav
+    const toggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // ---- Skills data — edit name/level to match your real skills ----
+    const skills = [
+      { name: 'HTML5',          level: 88 },
+      { name: 'CSS3',           level: 82 },
+      { name: 'JavaScript',     level: 72 },
+      { name: 'Responsive Design', level: 80 },
+      { name: 'Git & GitHub',   level: 75 },
+      { name: 'SQL / MySQL',    level: 65 },
+      { name: 'Python',         level: 58 },
+      { name: 'Systems Analysis', level: 70 },
+    ];
+
+    // Render skill bars into the grid
+    const grid = document.getElementById('skillsGrid');
+    skills.forEach(s => {
+      const el = document.createElement('div');
+      el.className = 'skill-item';
+      el.innerHTML = `
+        <div class="skill-header">
+          <span>${s.name}</span>
+          <span class="skill-pct">${s.level}%</span>
+        </div>
+        <div class="skill-bar"
+             role="progressbar"
+             aria-valuenow="${s.level}"
+             aria-valuemin="0"
+             aria-valuemax="100"
+             aria-label="${s.name} proficiency ${s.level}%">
+          <div class="skill-fill" data-width="${s.level}%"></div>
+        </div>
+      `;
+      grid.appendChild(el);
+    });
+
+    // Animate bars when they scroll into view
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.skill-fill').forEach(bar => {
+            bar.style.width = bar.dataset.width;
+          });
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    observer.observe(grid);
+  </script>
+
+</body>
+</html>

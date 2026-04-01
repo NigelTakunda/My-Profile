@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Projects by Nigel Takunda Nawu — web development portfolio." />
+  <title>Projects | Nigel Takunda Nawu</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Mulish:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- External CSS stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <nav class="navbar" id="navbar" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="nav-logo">Nigel<em>.</em></a>
+
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html" class="active" aria-current="page">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <button class="nav-toggle" id="navToggle"
+              aria-label="Toggle navigation menu"
+              aria-expanded="false"
+              aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===================== PAGE HEADER ===================== -->
+  <header class="page-header" aria-labelledby="projects-heading">
+    <div class="container">
+      <span class="section-label">My Work</span>
+      <h1 id="projects-heading">Projects</h1>
+      <p>A selection of web development projects built during my studies and personal learning.</p>
+    </div>
+  </header>
+
+  <!-- ===================== PROJECTS GRID ===================== -->
+  <main>
+    <section class="section" aria-label="Projects portfolio">
+      <div class="container">
+
+        <!--
+          CSS GRID layout (fulfils brief requirement):
+          .projects-grid uses grid-template-columns: repeat(3, 1fr)
+          defined in css/style.css
+        -->
+        <div class="projects-grid" id="projectsGrid" aria-label="Project cards">
+          <!-- Cards injected by JavaScript below -->
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <p>© <span id="year"></span> Nigel Takunda Nawu. All rights reserved.</p>
+        <nav aria-label="Footer navigation">
+          <ul class="nav-links" role="list">
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== JAVASCRIPT ===================== -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Navbar scroll shadow
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    // Mobile nav
+    const toggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // ---- Project data ----
+    // Replace github and demo URLs with your real repository/live links.
+    // Add a real screenshot by setting: img: 'images/project1.jpg'
+    const projects = [
+      {
+        emoji: '🏫',
+        title: 'HIT Student Portal Clone',
+        description:
+          'A front-end recreation of a student information portal with timetable display, module registration interface, and results viewing — built as a UI/UX study.',
+        tags: ['HTML5', 'CSS3', 'JavaScript'],
+        github: 'https://github.com/nigelnawu/hit-portal-clone',
+        demo:   'https://nigelnawu.github.io/hit-portal-clone',
+      },
+      {
+        emoji: '🌦️',
+        title: 'WeatherZW',
+        description:
+          'A responsive weather dashboard that fetches live data from the OpenWeather API for any Zimbabwean city, with a 5-day forecast and dynamic weather icons.',
+        tags: ['JavaScript', 'REST API', 'CSS Grid'],
+        github: 'https://github.com/nigelnawu/weatherzw',
+        demo:   'https://nigelnawu.github.io/weatherzw',
+      },
+      {
+        emoji: '📋',
+        title: 'Task Manager App',
+        description:
+          'A minimalist to-do and task management app with add, edit, delete, and priority-tagging features. Data persists via localStorage.',
+        tags: ['HTML5', 'CSS3', 'JavaScript'],
+        github: 'https://github.com/nigelnawu/task-manager',
+        demo:   'https://nigelnawu.github.io/task-manager',
+      },
+      {
+        emoji: '🛒',
+        title: 'LocalMart E-Commerce UI',
+        description:
+          'A responsive product-listing and shopping-cart interface for a fictional local marketplace, featuring product filtering and a checkout summary page.',
+        tags: ['HTML5', 'CSS3', 'JavaScript'],
+        github: 'https://github.com/nigelnawu/localmart',
+        demo:   'https://nigelnawu.github.io/localmart',
+      },
+      {
+        emoji: '📰',
+        title: 'News Aggregator',
+        description:
+          'Pulls headlines from a public news API and displays them in a card-based layout with category filtering and a read-more modal.',
+        tags: ['JavaScript', 'Fetch API', 'CSS'],
+        github: 'https://github.com/nigelnawu/news-aggregator',
+        demo:   'https://nigelnawu.github.io/news-aggregator',
+      },
+      {
+        emoji: '🧮',
+        title: 'ISA Study Quiz',
+        description:
+          'An interactive multiple-choice quiz app covering Information Systems concepts. Tracks score, timer, and shows correct answers on completion.',
+        tags: ['HTML5', 'CSS3', 'JavaScript'],
+        github: 'https://github.com/nigelnawu/isa-quiz',
+        demo:   'https://nigelnawu.github.io/isa-quiz',
+      },
+    ];
+
+    // SVG icons
+    const ghIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>`;
+    const liveIcon = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>`;
+
+    // Render cards
+    const grid = document.getElementById('projectsGrid');
+    projects.forEach(p => {
+      const card = document.createElement('article');
+      card.className = 'project-card';
+      card.innerHTML = `
+        <div class="project-thumb" aria-label="${p.title} project thumbnail">${p.emoji}</div>
+        <div class="project-body">
+          <div class="project-tags">
+            ${p.tags.map(t => `<span class="tag">${t}</span>`).join('')}
+          </div>
+          <h3 class="project-title">${p.title}</h3>
+          <p class="project-desc">${p.description}</p>
+          <div class="project-links">
+            <a href="${p.github}" class="project-link"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="View ${p.title} source on GitHub">
+              ${ghIcon} GitHub
+            </a>
+            <a href="${p.demo}" class="project-link"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="View live demo of ${p.title}">
+              ${liveIcon} Live Demo
+            </a>
+          </div>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  </script>
+
+</body>
+</html>

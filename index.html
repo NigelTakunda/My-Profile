@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Nigel Takunda Nawu — BSc Information Systems & Analysis student at HIT. Web developer based in Harare, Zimbabwe." />
+  <title>Nigel Takunda Nawu | Web Developer</title>
+
+  <!-- Google Fonts: Cormorant Garamond (serif display) + Mulish (clean sans) + IBM Plex Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Mulish:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- External CSS stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===================== NAVIGATION ===================== -->
+  <nav class="navbar" id="navbar" aria-label="Main navigation">
+    <div class="container">
+      <!-- Brand / Logo -->
+      <a href="index.html" class="nav-logo" aria-label="Nigel Nawu home">
+        Nigel<em>.</em>
+      </a>
+
+      <!-- Nav links -->
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="index.html" class="active" aria-current="page">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <!-- Mobile hamburger -->
+      <button class="nav-toggle" id="navToggle"
+              aria-label="Toggle navigation menu"
+              aria-expanded="false"
+              aria-controls="navLinks">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===================== HERO ===================== -->
+  <main>
+    <section class="hero" aria-labelledby="hero-name">
+      <div class="container">
+        <div class="hero-inner">
+
+          <!-- Text content -->
+          <div class="hero-text">
+            <span class="hero-eyebrow">👋 Welcome — I'm</span>
+
+            <h1 class="hero-name" id="hero-name">Nigel Takunda Nawu</h1>
+
+            <p class="hero-title">
+              BSc Information Systems &amp; Analysis &nbsp;·&nbsp; Harare Institute of Technology
+            </p>
+
+            <p class="hero-intro">
+              I design and build clean, responsive web applications with a focus
+              on usability and professional quality. Based in Harare, Zimbabwe —
+              open to opportunities and collaboration.
+            </p>
+
+            <!-- Call-to-action buttons -->
+            <div class="hero-cta">
+              <a href="projects.html" class="btn btn-primary">
+                <!-- Inline SVG: monitor icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                     fill="none" stroke="currentColor" stroke-width="2"
+                     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="3" width="20" height="14" rx="2"/>
+                  <line x1="8" y1="21" x2="16" y2="21"/>
+                  <line x1="12" y1="17" x2="12" y2="21"/>
+                </svg>
+                View My Projects
+              </a>
+              <a href="contact.html" class="btn btn-outline" style="color:#fff; border-color:rgba(255,255,255,0.4);">
+                Get In Touch
+              </a>
+            </div>
+          </div>
+
+          <!-- Avatar / Photo -->
+          <div class="hero-avatar">
+            <div class="avatar-frame">
+              <!--
+                TO ADD YOUR PHOTO:
+                Replace the div below with:
+                <img src="images/nigel.jpg" alt="Nigel Takunda Nawu" class="avatar-photo" style="border-radius:8px;width:280px;height:280px;object-fit:cover;">
+              -->
+              <div class="avatar-photo" role="img" aria-label="Nigel Takunda Nawu">
+                <div class="avatar-photo-placeholder">
+                  👤
+                  <span>your photo here</span>
+                </div>
+              </div>
+
+              <!-- Credential badge -->
+              <div class="hero-credential" aria-label="Currently studying at HIT">
+                🎓 HIT · BSc ISA
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <p>© <span id="year"></span> Nigel Takunda Nawu. All rights reserved.</p>
+        <nav aria-label="Footer navigation">
+          <ul class="nav-links" role="list">
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== JAVASCRIPT ===================== -->
+  <script>
+    // Inject current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Navbar shadow on scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 10);
+    });
+
+    // Mobile nav toggle
+    const toggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    toggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+
+    // Close on link click (mobile)
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+
+</body>
+</html>
